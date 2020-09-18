@@ -23,6 +23,12 @@ async function sendAttendance(type) {
     },
     response = await fetch(url, options);
   log(`${response.url}: ${response.status}(${response.statusText})`);
-  log(await response.text());
+  return await response.text();
 }
-sendAttendance('checkout')
+async function checkin() {
+  return await sendAttendance('checkin');
+}
+async function checkout() {
+  return await sendAttendance('checkout');
+}
+module.exports = { checkin, checkout };

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io client Web</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+        var host = 'http://localhost:5000', // heroku
+            socket = io.connect(host),
+            log = console.log
+        socket.on('attendance', function (msg) {
+            log(msg)
+        })
+        socket.on('connection', (msg) => {
+            log(msg)
+        })
+        function checkin(){
+            socket.emit('attendance','checkin')
+        }
+        function checkout(){
+            socket.emit('attendance', 'checkout')
+        }
+    </script>
+    <button onclick="checkin()">Checkin</button>
+    <button onclick="checkout()">Checkout</button>
+</body>
+
+</html>
