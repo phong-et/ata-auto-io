@@ -19,11 +19,11 @@
         socket.on('connection', (msg) => {
             log(msg)
         })
-        function checkin(){
-            socket.emit('attendance','checkin')
+        function checkin(reason){
+            socket.emit('attendance',{type:'checkin', reason: document.getElementById('txtReason').value})
         }
         function checkout(){
-            socket.emit('attendance', 'checkout')
+            socket.emit('attendance', {type:'checkout', reason: document.getElementById('txtReason').value})
         }
     </script>
     <button onclick="checkin()">Checkin</button>
