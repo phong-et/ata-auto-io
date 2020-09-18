@@ -10,7 +10,7 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script>
-        var host = 'http://localhost:5000', // heroku
+        var host = location.host.indexOf('localhost') !== -1 ? 'http://localhost:5000' : 'https://ata-auto-io.herokuapp.com',
             socket = io.connect(host),
             log = console.log
         socket.on('attendance', function (msg) {
