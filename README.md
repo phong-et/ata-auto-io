@@ -13,7 +13,7 @@
 ## Service attendance
 
 ```js
-node service.js
+node service
 ```
 
 ## Run as window service
