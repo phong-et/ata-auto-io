@@ -7,7 +7,8 @@
 var app = require('./app');
 var debug = require('debug')('ata-auto-io:server');
 var http = require('http');
-var socket = require('socket.io')
+var socket = require('socket.io');
+var log = console.log;
 
 /**
  * Get port from environment and store in Express.

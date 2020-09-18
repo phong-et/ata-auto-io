@@ -1,4 +1,6 @@
-var socket = require('socket.io-client')('https://ata-auto-io.herokuapp.com'),
+var socket = require('socket.io-client')
+('https://ata-auto-io.herokuapp.com'),
+  //('http://localhost:5000'),
   log = console.log,
   attendance = require('./attendance');
 (async () => {
