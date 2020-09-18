@@ -1,0 +1,23 @@
+{
+  "name": "ata-checkinout-auto",
+  "version": "1.0.0",
+  "description": "ata-checkinout-auto",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phong-et/ata-checkinout-auto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phong-et/ata-checkinout-auto/issues"
+  },
+  "homepage": "https://github.com/phong-et/ata-checkinout-auto#readme"
+}

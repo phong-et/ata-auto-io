@@ -1,0 +1,3 @@
+module.exports = {
+    tokenUser :'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJwaGlsbGlwNy5ldCIsInJvbGUiOiJVc2VyIiwibmJmIjoxNTk5NTM0Mzc5LCJleHAiOjE2MzEwNzAzNzksImlhdCI6MTU5OTUzNDM3OX0.HEu_jQHMsyHkZw5EEtWnmY0GjHDoF5Nb_uwcDkIP2DF95Mv6QM98eBoBwTZOkRAMywvb-c9xjx1hC7sq9fzO2w',
+}
