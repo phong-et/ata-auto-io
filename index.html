@@ -13,22 +13,22 @@
         var host = location.host.indexOf('localhost') !== -1 ? 'http://localhost:5000' : 'https://ata-auto-io.herokuapp.com',
             socket = io.connect(host),
             log = console.log
-        socket.on('attendance', function (msg) {
+        socket.on('attendance', msg => {
             log(msg)
         })
-        socket.on('connection', (msg) => {
+        socket.on('connection', msg => {
             log(msg)
         })
-        function checkin(reason){
-            socket.emit('attendance',{type:'checkin', reason: document.getElementById('txtReason').value})
+        function checkin() {
+            socket.emit('attendance', { type: 'checkin', reason: document.getElementById('txtReason').value })
         }
-        function checkout(){
-            socket.emit('attendance', {type:'checkout', reason: document.getElementById('txtReason').value})
+        function checkout() {
+            socket.emit('attendance', { type: 'checkout', reason: document.getElementById('txtReason').value })
         }
     </script>
     <button onclick="checkin()">Checkin</button>
     <button onclick="checkout()">Checkout</button>
-    <input type="text" id="txtReason" placeholder="reason"/>
+    <input type="text" id="txtReason" placeholder="reason" />
 </body>
 
 </html>
