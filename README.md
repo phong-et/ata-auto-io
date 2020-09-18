@@ -1,5 +1,15 @@
 # ata-auto-io
 
+## Config token bear
+
+- Change your token attribute ***tokenUser*** at ./aio.cfg.js
+
+    ```js
+    {
+        tokenUser :'<string>'
+    }
+    ```
+
 ## Service attendance
 
 ```js
