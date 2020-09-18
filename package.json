@@ -1,26 +1,14 @@
 {
-  "name": "ata-checkinout-auto",
+  "name": "ata-auto-io",
   "version": "1.0.0",
-  "description": "ata-checkinout-auto",
-  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./server"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node ./server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/phong-et/ata-checkinout-auto.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/phong-et/ata-checkinout-auto/issues"
-  },
-  "homepage": "https://github.com/phong-et/ata-checkinout-auto#readme"
+  }
 }
