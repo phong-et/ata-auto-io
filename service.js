@@ -1,12 +1,46 @@
 const cron = require('cron'),
   log = console.log,
   attendance = require('./attendance'),
-  minutes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],
-  randomMinutes = () => minutes[Math.floor(Math.random() * 31)];
-
-
+  minutes = [
+    '00',
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    // 29,
+    // 30,
+  ],
+  randomMinutes = () => minutes[Math.floor(Math.random() * minutes.length)],
+  cronTimeCheckIn = `00 ${randomMinutes()} 09 * * 0-6`,
+  cronTimeCheckOut = `00 ${randomMinutes()} 18 * * 0-6`;
+log('cronTimeCheckIn: %s', cronTimeCheckIn);
+log('cronTimeCheckIn: %s', cronTimeCheckOut);
 const jobCheckin = new cron.CronJob({
-  cronTime: `00 ${randomMinutes()} 09 * * 0-6`,
+  cronTime: cronTimeCheckIn,
   onTick: function () {
     log('checkin runing...');
     attendance.checkin();
@@ -17,7 +51,7 @@ const jobCheckin = new cron.CronJob({
 jobCheckin.start();
 
 const jobCheckout = new cron.CronJob({
-  cronTime: `00 ${randomMinutes()} 18 * * 0-6`,
+  cronTime: cronTimeCheckOut,
   onTick: function () {
     log('checkout runing...');
     attendance.checkout();
