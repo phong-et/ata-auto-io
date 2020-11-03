@@ -6,7 +6,7 @@ const fetch = require('node-fetch'),
  *
  * @param {*} type is ['checkin','checkout']
  */
-async function sendAttendance({type, reason = ''}) {
+async function sendAttendance({ type, reason = '' }) {
   let url = 'https://atacore.azurewebsites.net/api/attendance/' + type,
     options = {
       method: 'post',
@@ -26,9 +26,10 @@ async function sendAttendance({type, reason = ''}) {
   return await response.text();
 }
 async function checkin(reason) {
-  return await sendAttendance({type:'checkin', reason: reason});
+  return await sendAttendance({ type: 'checkin', reason: reason });
 }
 async function checkout(reason) {
-  return await sendAttendance({type:'checkout', reason: reason});
+  return await sendAttendance({ type: 'checkout', reason: reason });
 }
 module.exports = { checkin, checkout };
+//(async () => log(await sendAttendance({ type: 'checkin', reason: 'reason' })))();
