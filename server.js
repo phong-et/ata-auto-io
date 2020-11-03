@@ -101,3 +101,20 @@ io.on('connection', function (socket) {
     io.emit('user disconnected', socket.userId);
   });
 });
+
+// Start Services
+
+// Checkin
+const childProcess = require('child_process');
+let checkinServiceProcess = childProcess.fork('./checkinService.js');
+checkinServiceProcess.on('message', async (message) => {
+  log('> Server got msg:', message);
+});
+checkinServiceProcess.send('start');
+
+// Checkout
+let checkoutServiceProcess = childProcess.fork('./checkoutService.js');
+checkoutServiceProcess.on('message', async (message) => {
+  log('> Server got msg:', message);
+});
+checkoutServiceProcess.send('start');
